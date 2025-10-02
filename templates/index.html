@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{%block title%}歡迎{%endblock%}
+{%block headmessage%}最新消息
+	{%if request.session.userName%}
+	-   <a href="/post/add/">新增</a>
+	{%endif%}
+
+{%endblock%}
+{%block content%}
+<table>
+	{%for post in posts%}
+	<tr><td><a href="/post/{{post.id}}">{{post}}</a></td>
+	<td>{{post.pub_date}}</td></tr>
+	{%endfor%}
+	</table>
+	{%endblock%}
