@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <title>{% block title %}我的網站{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    {%load static%}
     <!-- 可加上 Bootstrap CDN（選擇性） -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     
@@ -18,6 +18,7 @@
 </head>
 <body>
     <!-- 導覽列（可選） -->
+    {%include 'header.html'%}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="/">我的部落格</a>
@@ -48,6 +49,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     {% block scripts %}{% endblock %}
+    {%include 'footer.html'%}
 </body>
 </html>
 
